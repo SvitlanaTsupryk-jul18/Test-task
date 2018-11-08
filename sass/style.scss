@@ -1,0 +1,639 @@
+        /* Regular */
+        
+        @font-face {
+            font-family: 'League Gothic';
+            src: url('../league-gothic/webfonts/leaguegothic-italic-webfont.eot');
+            src: url('../league-gothic/webfonts/leaguegothic-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../league-gothic/webfonts/leaguegothic-italic-webfont.woff') format('woff'), url('../league-gothic/webfonts/leaguegothic-italic-webfont.ttf') format('truetype'), url('../league-gothic/webfonts/leaguegothic-italic-webfont.svg#league_gothic_italicregular') format('svg');
+            font-weight: normal;
+            font-style: italic;
+        }
+        /* Italic */
+        
+        @font-face {
+            font-family: 'League Gothic';
+            src: url('../league-gothic/webfonts/leaguegothic-regular-webfont.eot');
+            src: url('../league-gothic/webfonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../league-gothic/webfonts/leaguegothic-regular-webfont.woff') format('woff'), url('../league-gothic/webfonts/leaguegothic-regular-webfont.ttf') format('truetype'), url('../league-gothic/webfonts/leaguegothic-regular-webfont.svg#league_gothicregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /* Condensed */
+        
+        @font-face {
+            font-family: 'League Gothic Condensed';
+            src: url('../league-gothic/webfonts/leaguegothic-condensed-regular-webfont.eot');
+            src: url('../league-gothic/webfonts/leaguegothic-condensed-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../league-gothic/webfonts/leaguegothic-condensed-regular-webfont.woff') format('woff'), url('../league-gothic/webfonts/leaguegothic-condensed-regular-webfont.ttf') format('truetype'), url('../league-gothic/webfonts/leaguegothic-condensed-regular-webfont.svg#league_gothic_condensed-Rg') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /* Condensed Italic */
+        
+        @font-face {
+            font-family: 'League Gothic Condensed';
+            src: url('../league-gothic/webfonts/leaguegothic-condensed-italic-webfont.eot');
+            src: url('../league-gothic/webfonts/leaguegothic-condensed-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../league-gothic/webfonts/leaguegothic-condensed-italic-webfont.woff') format('woff'), url('../league-gothic/webfonts/leaguegothic-condensed-italic-webfont.ttf') format('truetype'), url('../league-gothic/webfonts/leaguegothic-condensed-italic-webfont.svg#league_gothic_condensed_itaRg') format('svg');
+            font-weight: normal;
+            font-style: italic;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        $main-blue: #076e9f;
+        $lite-blue: #22aaec;
+        $dark-blue:#045279;
+        $grey: #d4d4d4;
+        %grad {
+            background-color: $main-blue;
+            color: white;
+            background: linear-gradient(0deg, #00141e 0%, $main-blue 100%);
+            background: -webkit-linear-gradient(90deg, $dark-blue 0%, $main-blue 100%);
+            background: -moz-linear-gradient(90deg, $dark-blue 0%, $main-blue 100%);
+            background: -o-linear-gradient(90deg, $dark-blue 0%, $main-blue 100%);
+            background: -ms-linear-gradient(90deg, $dark-blue 0%, $main-blue 100%);
+        }
+        
+        %text {
+            font-family: Arial;
+            color: #5c5c5c;
+            font-size: 10px;
+        }
+        
+        // @mixin transform($property) {
+        //     -webkit-transform: $property;
+        //     -ms-transform: $property;
+        //     transform: $property;
+        //   }
+        //   .box { @include transform(rotate(30deg)); }
+        body {
+            height: 100%;
+            font-family: 'League Gothic', sans-serif;
+            font-weight: 400;
+        }
+        
+        .header {
+            padding: 1em 2em;
+            position: relative;
+        }
+        
+        .social {
+            float: right;
+            position: absolute;
+            right: 2em;
+            &__img {
+                width: 16px;
+                height: 16px;
+            }
+            a {
+                color: #d4d4d4;
+                padding-right: 7px;
+                transition: all 0.5s;
+                &:hover {
+                    color: $lite-blue;
+                }
+            }
+        }
+        
+        .logo h1 {
+            font-size: 32px;
+            color: $main-blue;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1;
+            font-weight: 400;
+        }
+        
+        .lite-blue {
+            color: $lite-blue;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+            li {
+                display: inline-block;
+                margin-right: 5px;
+                transition: all 1s ease;
+            }
+            a {
+                font-family: Arial;
+                padding: 5px 16px;
+                color: #707070;
+                font-size: 13px;
+                text-align: center;
+                transition: all 1s ease;
+                &:hover,
+                &:active {
+                    border: 1px $dark-blue solid;
+                    @extend %grad;
+                }
+            }
+        }
+        
+        .hero {
+            background-image: url(../images/main-img.png);
+            background-size: cover;
+            border-top: 2px $lite-blue solid;
+            border-bottom: 2px $lite-blue solid;
+            text-align: center;
+            &__h2 {
+                font-size: 60px;
+                color: $main-blue;
+                text-transform: uppercase;
+                padding: 0 33px;
+                background-color: rgba(255, 255, 255, 0.8);
+                margin-top: 1.5em;
+                display: inline-block;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            &__text {
+                font-size: 30px;
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 6px 12px;
+                margin-top: 19px;
+                margin-bottom: 2.5em;
+                color: $main-blue;
+                display: inline-block;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            &__bottom {
+                display: flex;
+                background-color: rgba(0, 0, 0, 0.5);
+                height: 120px;
+                align-self: flex-end;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+        }
+        
+        .people {
+            width: 155px;
+            height: 70px;
+            font-family: Arial;
+            font-size: 9px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.9);
+            transition: all 0.5s;
+            &:hover {
+                transform: scale(1.2);
+            }
+            &__text {
+                color: #515151;
+                font-style: italic;
+                line-height: 14px;
+                padding: 10px 0 5px 0;
+                width: 110%;
+                transform: translateX(-10%);
+            }
+            &__name {
+                color: #828282;
+                width: 110%;
+                transform: translateX(-10%);
+            }
+            &__img {
+                float: left;
+                transform: translateX(-50%);
+            }
+        }
+        
+        .wrapper {
+            display: flex;
+            border-bottom: 1px #d5d5d5 dotted;
+            margin: 0 35px;
+        }
+        
+        .aside {
+            flex: 1 0 230px;
+            width: 230px;
+            border-right: 1px #d5d5d5 dotted;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 1em 0;
+            &__h3 {
+                font-family: 'League Gothic';
+                color: $main-blue;
+                font-size: 22px;
+                text-transform: uppercase;
+                font-weight: 400;
+                padding: 16px 0;
+            }
+            &__autor {
+                @extend %text;
+                line-height: 18px;
+                text-align: left;
+                border-bottom: 1px #d5d5d5 dotted;
+                padding: 0 1em 1em 0;
+                .aside__span {
+                    font-weight: 800;
+                    color: $main-blue;
+                }
+            }
+            &__posts {
+                border-bottom: 1px #d5d5d5 dotted;
+                display: flex;
+                flex-direction: column;
+            }
+            &__post {
+                @extend %text;
+                font-weight: 700;
+                text-align: left;
+                transition: all 0.5s;
+                &:hover {
+                    transform: scale(1.2);
+                }
+                &:first-of-type {
+                    margin-top: -10px;
+                }
+                &:last-of-type {
+                    margin-bottom: 20px;
+                }
+                img {
+                    float: left;
+                    padding: 10px;
+                }
+                h4 {
+                    font-weight: 700;
+                    padding-top: 15px;
+                    line-height: 18px;
+                }
+                p {
+                    font-style: italic;
+                }
+            }
+            &__currency {
+                margin: 0 35px;
+            }
+        }
+        
+        .currency__table {
+            width: 160px;
+            height: 80px;
+            border: 1px white solid;
+            font-family: Arial;
+            font-size: 10px;
+            text-align: center;
+            padding-bottom: 50px;
+            th {
+                background-color: $main-blue;
+                color: white;
+                height: 19px;
+            }
+            tr {
+                background-color: rgba(144, 212, 245, 0.5);
+                color: $main-blue;
+                &:nth-child(3) {
+                    background-color: rgba(144, 212, 245, 0.7);
+                }
+            }
+            td {
+                width: 25%;
+                height: 19px;
+            }
+        }
+        
+        //      display: grid;
+        //      grid-template-columns: repeat(4, 1fr);
+        //      grid-template-rows: repeat(4, 1fr);
+        //      grid-gap: 1px;
+        //  }
+        //  .box {
+        //      background-color: rgba(144, 212, 245, 0.5);
+        //      color: $main-blue;
+        //      text-align: center;
+        //  }
+        svg:hover .comment {
+            fill: $lite-blue;
+        }
+        
+        .main {
+            &__post {
+                width: 100%;
+                height: 200px;
+                border-right: 1px #d5d5d5 dotted;
+                border-bottom: 1px #d5d5d5 dotted;
+                margin-top: -10px;
+                border-top: 2px solid $lite-blue;
+                background-color: #fff;
+                padding: 16px;
+                position: relative;
+                h2 {
+                    color: $main-blue;
+                    font-size: 32px;
+                    padding: 6px 0;
+                    font-weight: 400;
+                }
+            }
+            &__data {
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                background-color: $lite-blue;
+                font-family: Arial;
+                color: #ffffff;
+                font-size: 8px;
+                font-weight: 700;
+                text-align: center;
+                float: left;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 16px;
+            }
+            &__autor {
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                background-color: $lite-blue;
+                background-image: url(../images/icon/user-male-icon.svg);
+                font-family: Arial;
+                color: #ffffff;
+                font-size: 8px;
+                font-weight: 700;
+                text-align: center;
+                float: left;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 35px;
+            }
+            &__text {
+                @extend %text;
+                line-height: 18px;
+                text-align: left;
+                padding-right: 6%;
+                padding-bottom: 25px;
+            }
+            &__btn {
+                border: 1px #00141e solid;
+                @extend %grad;
+                width: 70px;
+                height: 26px;
+                font-family: Arial;
+                color: #ffffff;
+                font-size: 10px;
+                font-weight: 700;
+                box-shadow: 0px 1px 1px #d6d6d6;
+                left: 22%;
+                position: absolute;
+                transition: all 0.5s;
+                &:hover {
+                    animation: shake 2s;
+                    background: linear-gradient(0deg, $lite-blue 0%, $main-blue 100%);
+                    background: -webkit-linear-gradient(90deg, $lite-blue 0%, $main-blue 100%);
+                    background: -moz-linear-gradient(90deg, $lite-blue 0%, $main-blue 100%);
+                    background: -o-linear-gradient(90deg, $lite-blue 0%, $main-blue 100%);
+                    background: -ms-linear-gradient(90deg, $lite-blue 0%, $main-blue 100%);
+                }
+            }
+            &__likes {
+                position: absolute;
+                right: -5px;
+                padding-left: 15px;
+                font-family: Arial;
+                color: $main-blue;
+                font-size: 10px;
+                background-color: #90d4f5;
+                width: 180px;
+                height: 26px;
+                &::after {
+                    content: url(../images/icon/Prostok崠2.svg);
+                    position: absolute;
+                    right: 0;
+                    bottom: -5px;
+                }
+            }
+            &__inner {
+                display: flex;
+                padding: 14px 0 30px 14px;
+            }
+            .likes,
+            .comment {
+                transform: translateY(30%);
+                transition: all 0.5s;
+            }
+            .likes:hover,
+            .comment:hover {
+                animation: rotate 0.75s infinite;
+            }
+        }
+        
+        @keyframes rotate {
+            0%,
+            100% {
+                transform: rotate(-20deg) scale(1.1);
+            }
+            50% {
+                transform: rotate(20deg) scale(1.1);
+            }
+        }
+        
+        .posts {
+            border-radius: 10px 0 0 0;
+            background-color: #eaeaea;
+            padding: 30px;
+            width: 49%;
+            position: relative;
+            p {
+                @extend %text;
+                line-height: 18px;
+                padding: 7px 0;
+            }
+            &__h3 {
+                font-size: 22px;
+                color: $main-blue;
+                font-weight: normal;
+                line-height: 14px;
+            }
+            &__footer {
+                width: 100%;
+                height: 30px;
+                background-color: #f4f3f3;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                text-align: right;
+                font-family: Arial;
+                color: $main-blue;
+                font-size: 10px;
+            }
+            &:before,
+            &:after {
+                z-index: -1;
+                content: '';
+                position: absolute;
+                width: 50%;
+                max-width: 300px;
+                top: 80%;
+                bottom: 16px;
+                left: 10px;
+                background: #5f5f5f;
+                box-shadow: 0 15px 10px #5f5f5f;
+                transform: rotate(-3deg);
+            }
+            &:after {
+                transform: rotate(3deg);
+                right: 10px;
+                left: auto;
+            }
+            &:first-of-type {
+                margin-right: 15px;
+            }
+        }
+        
+        .add {
+            width: 98%;
+            height: 80px;
+            margin-left: 14px;
+            background-color: #eaeaea;
+            position: relative;
+            @extend %text;
+            text-align: center;
+            padding: 20px;
+            &:before,
+            &:after {
+                z-index: -1;
+                content: '';
+                position: absolute;
+                width: 30%;
+                max-width: 300px;
+                top: 50%;
+                bottom: 16px;
+                left: 10px;
+                background: #5f5f5f;
+                box-shadow: 0 15px 10px #5f5f5f;
+                transform: rotate(-3deg);
+            }
+            &:after {
+                transform: rotate(3deg);
+                right: 10px;
+                left: auto;
+            }
+        }
+        
+        .dark-blue {
+            color: $main-blue;
+            font-family: Arial;
+            font-size: 10px;
+            line-height: 18px;
+        }
+        
+        .place h2 {
+            font-size: 32px;
+            color: $main-blue;
+            padding: 18px 37px;
+            font-weight: normal;
+        }
+        
+        #map {
+            height: 200px;
+        }
+        
+        footer p {
+            @extend %text;
+            line-height: 18px;
+            text-align: center;
+            padding: 10px;
+            text-transform: uppercase;
+            border-top: 1px #d5d5d5 dotted;
+            width: 92%;
+            margin-left: 4%;
+        }
+        
+        .footer__nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1em;
+            li {
+                display: inline-block;
+                margin-right: 5px;
+            }
+            a {
+                font-family: Arial;
+                padding: 5px 16px;
+                color: #707070;
+                font-size: 13px;
+                text-align: center;
+                transition: all 1s ease;
+                &:hover,
+                &:active {
+                    border-bottom: 1px $dark-blue solid;
+                    color: $lite-blue;
+                    font-weight: bold;
+                }
+            }
+        }
+        
+        .logo--footer {
+            font-size: 16px;
+            color: $main-blue;
+            text-transform: uppercase;
+            text-align: left;
+            float: left;
+            font-weight: 400;
+            padding: 1em 3em;
+        }
+        
+        @-webkit-keyframes shake {
+            from,
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: translate3d(-10px, 0, 0);
+                transform: translate3d(-10px, 0, 0);
+            }
+            20%,
+            40%,
+            60%,
+            80% {
+                -webkit-transform: translate3d(10px, 0, 0);
+                transform: translate3d(10px, 0, 0);
+            }
+        }
+        
+        @keyframes shake {
+            from,
+            to {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: translate3d(-10px, 0, 0);
+                transform: translate3d(-10px, 0, 0);
+            }
+            20%,
+            40%,
+            60%,
+            80% {
+                -webkit-transform: translate3d(10px, 0, 0);
+                transform: translate3d(10px, 0, 0);
+            }
+        }
+        
+        //burger menu
+        .mob-menu {
+            display: none;
+        }
