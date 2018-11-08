@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="26px" height="38px" viewBox="0 0 26 38">
+<filter filterUnits="objectBoundingBox" x="-13.64" y="-8.82" width="127.27" height="117.65" id="filter0">
+<feGaussianBlur in="SourceAlpha" stdDeviation="1.50" result="dsBlurOut1"/>
+<feFlood flood-color="rgb(0,0,0)" result="dsFloodOut1"/>
+<feComposite in="dsFloodOut1" in2="dsBlurOut1" operator="in" result="dsShadow1"/>
+<feOffset in="dsShadow1" dx="0.00" dy="0.00" result="dsOffset1"/>
+<feComposite in="dsOffset1" in2="SourceAlpha" operator="out" result="dropShadow1"/>
+<feBlend in="dropShadow1" in2="SourceGraphic" mode="normal" result="sourceGraphic"/>
+<feImage x="2" y="2" width="22" height="34" preserveApectRatio="none" xlink:href="#symbol0"/>
+<feComposite in="grImage1" in2="SourceAlpha" operator="in" result="grOverlay1"/>
+<feComponentTransfer in="grOverlay1" result="grOpacity1">
+    <feFuncA type="linear" slope="0.20"/>
+</feComponentTransfer>
+<feBlend in="grOpacity1" in2="sourceGraphic" mode="overlay" result="gradientOverlay1"/>
+<feFlood flood-color="rgb(255,255,255)" result="igFloodOut"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="0.50" result="igBlurOut"/>
+<feComposite in="igFloodOut" in2="igBlurOut" operator="out" result="igRawGlow"/>
+<feComposite in="igRawGlow" in2="SourceAlpha" operator="in" result="igRawGlowClipped"/>
+<feComponentTransfer in="igRawGlowClipped" result="igInnerGlow">
+    <feFuncA type="linear" slope="0.75"/>
+</feComponentTransfer>
+<feBlend in="gradientOverlay1" in2="igInnerGlow" mode="overlay" result="innerGlow"/>
+<feFlood flood-color="rgb(255,255,255)" result="isFloodOut1"/>
+<feOffset in="SourceAlpha" dx="-0.00" dy="1.00" result="isOffset1"/>
+<feGaussianBlur in="isOffset1" stdDeviation="0.00" result="isBlurOut1"/>
+<feComposite in="isFloodOut1" in2="isBlurOut1" operator="out" result="isShadow1"/>
+<feComponentTransfer in="isShadow1" result="isShadowOpacity1">
+    <feFuncA type="linear" slope="0.55"/>
+</feComponentTransfer>
+<feComposite in="isShadowOpacity1" in2="SourceAlpha" operator="in" result="isInnerShadow1"/>
+<feBlend in="isInnerShadow1" in2="innerGlow" mode="overlay" result="innerShadow1"/>
+</filter>
+<linearGradient id="linear_PSgrad_0" x1="50%" y1="100%" x2="50%" y2="0%">
+    <stop offset="0%" stop-color="rgb(0,0,0)" stop-opacity="1" />
+    <stop offset="49.8779%" stop-color="rgb(255,255,255)" stop-opacity="1" />
+    <stop offset="100%" stop-color="rgb(255,255,255)" stop-opacity="1" />
+</linearGradient>
+
+<clipPath id="clip0"><path fillRule="evenodd" d="M 0.03 37.94C 0.03 37.94 0.03 0.28 0.03 0.28 0.03 0.28 26 0.28 26 0.28 26 0.28 26 37.94 26 37.94 26 37.94 0.03 37.94 0.03 37.94ZM 13.02 2.27C 6.95 2.27 2.03 7.19 2.03 13.26 2.03 19.33 13.02 35.94 13.02 35.94 13.02 35.94 24 19.33 24 13.26 24 7.19 19.08 2.27 13.02 2.27ZM 8.98 14.01C 8.98 11.82 10.75 10.04 12.95 10.04 15.14 10.04 16.92 11.82 16.92 14.01 16.92 16.21 15.14 17.98 12.95 17.98 10.75 17.98 8.98 16.21 8.98 14.01Z"/></clipPath><defs>
+<rect x="0" y="0" width="22" height="34" id="symbol0" fill="url(#linear_PSgrad_0)"/><symbol id="symbol1"><path fillRule="evenodd" d="M 13.02 35.94C 13.02 35.94 2.03 19.33 2.03 13.26 2.03 7.19 6.95 2.27 13.02 2.27 19.08 2.27 24 7.19 24 13.26 24 19.33 13.02 35.94 13.02 35.94ZM 12.95 10.04C 10.75 10.04 8.98 11.82 8.98 14.01 8.98 16.21 10.75 17.98 12.95 17.98 15.14 17.98 16.92 16.21 16.92 14.01 16.92 11.82 15.14 10.04 12.95 10.04Z"/></symbol></defs>
+<g><path fillRule="evenodd" d="M 13.02 35.94C 13.02 35.94 2.03 19.33 2.03 13.26 2.03 7.19 6.95 2.27 13.02 2.27 19.08 2.27 24 7.19 24 13.26 24 19.33 13.02 35.94 13.02 35.94ZM 12.95 10.04C 10.75 10.04 8.98 11.82 8.98 14.01 8.98 16.21 10.75 17.98 12.95 17.98 15.14 17.98 16.92 16.21 16.92 14.01 16.92 11.82 15.14 10.04 12.95 10.04Z" fill="rgb(35,172,236)" filter="url(#filter0)"/><use xlink:href="#symbol1" x="0" y="0" width="26" height="38" fill="none" stroke="rgb(14,71,87)" stroke-width="1.00px" clip-path="url(#clip0)"/></g></svg>
