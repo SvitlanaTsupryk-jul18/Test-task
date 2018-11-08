@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(normalize.css);
 /* Regular */
 @font-face {
   font-family: 'League Gothic';
@@ -100,17 +101,16 @@ nav {
   padding: 1em; }
   nav li {
     display: inline-block;
-    margin-right: 5px;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease; }
+    margin-right: 5px; }
   nav a {
     font-family: Arial;
     padding: 5px 16px;
     color: #707070;
     font-size: 13px;
     text-align: center;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease; }
+    border: 1px white solid;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
     nav a:hover, nav a:active {
       border: 1px #045279 solid; }
 
@@ -145,7 +145,7 @@ nav {
     display: -ms-flexbox;
     display: flex;
     background-color: rgba(0, 0, 0, 0.5);
-    height: 120px;
+    padding: 25px 0;
     -ms-flex-item-align: end;
     align-self: flex-end;
     -webkit-box-pack: space-evenly;
@@ -158,6 +158,7 @@ nav {
 .people {
   width: 155px;
   height: 70px;
+  margin-left: 45px;
   font-family: Arial;
   font-size: 9px;
   text-align: left;
@@ -239,8 +240,8 @@ nav {
     -webkit-transition: all 0.5s;
     transition: all 0.5s; }
     .aside__post:hover {
-      -webkit-transform: scale(1.2);
-      transform: scale(1.2); }
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
     .aside__post:first-of-type {
       margin-top: -10px; }
     .aside__post:last-of-type {
@@ -283,7 +284,7 @@ svg:hover .comment {
 
 .main__post {
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   border-right: 1px #d5d5d5 dotted;
   border-bottom: 1px #d5d5d5 dotted;
   margin-top: -10px;
@@ -433,8 +434,7 @@ svg:hover .comment {
   .posts__h3 {
     font-size: 22px;
     color: #076e9f;
-    font-weight: normal;
-    line-height: 14px; }
+    font-weight: normal; }
   .posts__footer {
     width: 100%;
     height: 30px;
@@ -500,7 +500,12 @@ svg:hover .comment {
   color: #076e9f;
   font-family: Arial;
   font-size: 10px;
-  line-height: 18px; }
+  line-height: 18px;
+  -webkit-transition: all ease-in 0.5s;
+  transition: all ease-in 0.5s; }
+  .dark-blue:hover {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px); }
 
 .place h2 {
   font-size: 32px;
@@ -593,3 +598,95 @@ footer p {
 
 .mob-menu {
   display: none; }
+
+@media only screen and (max-width: 850px) {
+  nav {
+    padding-top: 0; }
+  .wrapper {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .hero__text {
+    margin-bottom: 10px; }
+  .hero__bottom {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 15px 0; }
+  .people {
+    margin-bottom: 10px; }
+  .main {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1; }
+  .aside {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2; }
+    .aside__posts {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding-bottom: 10px; }
+    .aside__post:first-of-type, .aside__post:last-of-type {
+      margin: 0; }
+  .currency__table {
+    padding-bottom: 0; } }
+
+@media only screen and (max-width: 620px) {
+  .hero__h2 {
+    margin-top: 0.5em; }
+  .main__post {
+    padding-bottom: 36px; }
+  .social {
+    top: 70%; }
+  .logo {
+    margin-bottom: 20px; } }
+
+@media only screen and (min-width: 320px) and (max-width: 430px) {
+  .main__data {
+    margin: 0 20%; }
+  .main__autor {
+    float: none; }
+  .main__text {
+    padding: 10px 0; }
+  .main__btn {
+    left: 0; }
+  .main__inner {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .posts {
+    width: 100%; }
+    .posts:first-of-type {
+      margin: 20px 0; }
+  .aside__posts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly; }
+  .aside .aside__post {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    padding-bottom: 20px; }
+  .aside__h3 {
+    text-align: center; }
+  .currency__table {
+    -webkit-transform: translate(20%);
+    transform: translate(20%); }
+  .footer__nav {
+    display: none; }
+  .logo--footer {
+    font-size: 22px;
+    text-align: center;
+    float: none; } }
